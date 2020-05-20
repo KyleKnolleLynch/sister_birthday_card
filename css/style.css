@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'alien';
+  src: url('../fonts/SFAlienEncounters.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'alien-italic';
+  src: url('../fonts/SFAlienEncounters-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'pac-font';
+  src: url('../fonts/PAC-FONT.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'streamster';
+  src: url('../fonts/Streamster.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 10px;
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content-container {
+  min-height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.backdrop {
+  width: 100%;
+  /* background: linear-gradient(
+    black,
+    black 7%,
+    rgb(0, 210, 255),
+    rgb(0, 210, 255) 32%,
+    silver,
+    white 38%,
+    black 43%,
+    rgb(0, 210, 255),
+    silver 77%,
+    white 80%
+  ); */
+  background: linear-gradient(
+    rgb(0, 89, 255),
+    rgb(0, 210, 255),
+    white 42%,
+    black 48%,
+    hotpink,
+    pink,
+    white
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+}
+
+h1 {
+  font-family: 'alien-italic', Arial, Helvetica, sans-serif;
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: transparent;
+}
+
+.greet {
+  font-family: 'streamster', Helvetica, cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  position: absolute;
+  top: 42%;
+  left: 40%;
+  z-index: 2;
+  transform: rotate(-12deg);
+  animation: pulse1 1s ease-in-out infinite alternate;
+}
+
+.note {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  font-family: 'pac-font', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px cyan,
+    0 0 20px cyan, 0 0 25px cyan, 0 0 35px cyan;
+}
+
+@keyframes pulse1 {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px hotpink,
+      0 0 70px hotpink, 0 0 80px hotpink, 0 0 100px hotpink, 0 0 150px hotpink;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px hotpink,
+      0 0 35px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 75px hotpink;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .backdrop {
+    top: 30%;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  .greet {
+    top: 38%;
+    left: 50%;
+    font-size: 3rem;
+  }
+
+  .note {
+    font-size: 2rem;
+  }
+}
