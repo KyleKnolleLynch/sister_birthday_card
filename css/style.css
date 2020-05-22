@@ -1,16 +1,11 @@
 @font-face {
-  font-family: 'alien';
-  src: url('../fonts/SFAlienEncounters.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'alien-italic';
   src: url('../fonts/SFAlienEncounters-Italic.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'pac-font';
-  src: url('../fonts/PAC-FONT.TTF') format('truetype');
+  font-family: 'neonlights';
+  src: url('../fonts/NeonLights-22d.ttf') format('truetype');
 }
 
 @font-face {
@@ -49,10 +44,6 @@ video {
 
 .content-container {
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   text-align: center;
   position: relative;
   z-index: 1;
@@ -60,18 +51,6 @@ video {
 
 .backdrop {
   width: 100%;
-  /* background: linear-gradient(
-    black,
-    black 7%,
-    rgb(0, 210, 255),
-    rgb(0, 210, 255) 32%,
-    silver,
-    white 38%,
-    black 43%,
-    rgb(0, 210, 255),
-    silver 77%,
-    white 80%
-  ); */
   background: linear-gradient(
     rgb(0, 89, 255),
     rgb(0, 210, 255),
@@ -110,7 +89,7 @@ h1 {
   left: 40%;
   z-index: 2;
   transform: rotate(-12deg);
-  animation: pulse1 1s ease-in-out infinite alternate;
+  animation: 1s pulse1 ease-in-out alternate infinite;
 }
 
 .note {
@@ -118,23 +97,71 @@ h1 {
   top: 80%;
   left: 0;
   right: 0;
-  font-family: 'pac-font', Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
+  font-family: 'neonlights', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
   line-height: 2.4rem;
   color: #fff;
   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px cyan,
     0 0 20px cyan, 0 0 25px cyan, 0 0 35px cyan;
 }
 
+.flash1 {
+  animation: 3s flash ease-in-out 0.5s infinite;
+}
+
+.flash2 {
+  animation: 2s flash2 ease-in-out 1s infinite;
+}
+
+.flash3 {
+  animation: 2s flash ease-in-out 0.5s infinite;
+}
+
 @keyframes pulse1 {
   0% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px hotpink,
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 40px hotpink,
       0 0 70px hotpink, 0 0 80px hotpink, 0 0 100px hotpink, 0 0 150px hotpink;
   }
 
   100% {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px hotpink,
       0 0 35px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 75px hotpink;
+  }
+}
+
+@keyframes flash {
+  0%,
+  19%,
+  21%,
+  49%,
+  51%,
+  59%,
+  61%,
+  100% {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px cyan,
+      0 0 20px cyan, 0 0 25px cyan, 0 0 35px cyan;
+    opacity: 1;
+  }
+  20%,
+  50%,
+  60% {
+    text-shadow: none;
+    opacity: 0.4;
+  }
+}
+
+@keyframes flash2 {
+  0%,
+  40%,
+  42%,
+  100% {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px cyan,
+      0 0 20px cyan, 0 0 25px cyan, 0 0 35px cyan;
+    opacity: 1;
+  }
+  41% {
+    text-shadow: none;
+    opacity: 0.4;
   }
 }
 
@@ -154,6 +181,6 @@ h1 {
   }
 
   .note {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
