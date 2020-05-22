@@ -62,8 +62,8 @@ video {
   );
 
   background-clip: text;
-  -webkit-background-clip: text;
   -moz-background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   overflow: hidden;
   position: absolute;
@@ -90,11 +90,12 @@ h1 {
   z-index: 2;
   transform: rotate(-12deg);
   animation: 1s pulse1 ease-in-out alternate infinite;
+  -webkit-animation: 1s pulse1 ease-in-out alternate infinite;
 }
 
 .note {
   position: absolute;
-  top: 80%;
+  top: 72%;
   left: 0;
   right: 0;
   font-family: 'neonlights', Arial, Helvetica, sans-serif;
@@ -107,14 +108,17 @@ h1 {
 
 .flash1 {
   animation: 3s flash ease-in-out 0.5s infinite;
+  -webkit-animation: 3s flash ease-in-out 0.5s infinite;
 }
 
 .flash2 {
   animation: 2s flash2 ease-in-out 1s infinite;
+  -webkit-animation: 2s flash2 ease-in-out 1s infinite;
 }
 
 .flash3 {
   animation: 2s flash ease-in-out 0.5s infinite;
+  -webkit-animation: 2s flash ease-in-out 0.5s infinite;
 }
 
 @keyframes pulse1 {
